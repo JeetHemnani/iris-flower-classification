@@ -1,0 +1,10 @@
+from sklearn.datasets import load_iris
+import pandas as pd
+
+# Load dataset
+data = load_iris()
+df = pd.DataFrame(data.data, columns=data.feature_names)
+df['target'] = data.target
+
+# Save as CSV (if needed)
+df.to_csv('data/iris.csv', index=False)
